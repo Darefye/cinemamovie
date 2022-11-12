@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">SkillCinema</string>
+    <string name="todo">TODO</string>
+
+    <!--onboarding-->
+    <string name="onboarding_btn_skip">Пропустить</string>
+    <string name="onboarding_description_first">Узнавай\nо премьерах</string>
+    <string name="onboarding_description_second">Создавай\nколлекции</string>
+    <string name="onboarding_description_third">Делись\nс друзьями</string>
+
+    <!--bottom_menu-->
+    <string name="bottom_menu_home">Главная</string>
+    <string name="bottom_menu_search">Поиск</string>
+    <string name="bottom_menu_profile">Профиль</string>
+
+
+</resources>

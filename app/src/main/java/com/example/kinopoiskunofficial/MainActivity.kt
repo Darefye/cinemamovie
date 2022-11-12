@@ -11,11 +11,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kinopoiskunofficial.databinding.ActivityMainBinding
-import com.example.kinopoiskunofficial.onboarding.MainOnBoardingFragment
-import com.example.kinopoiskunofficial.onboarding.OnBoardingFragment1
-import com.example.kinopoiskunofficial.onboarding.OnBoardingFragment2
-import com.example.kinopoiskunofficial.onboarding.OnBoardingFragment3
-import com.example.kinopoiskunofficial.splash.SplashFragment
+import com.example.kinopoiskunofficial.presentation.BaseFragment
+import com.example.kinopoiskunofficial.presentation.splash.SplashFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
 
-        //check on boarding
         supportFragmentManager.registerFragmentLifecycleCallbacks(object :
             FragmentManager.FragmentLifecycleCallbacks() {
             override fun onFragmentViewCreated(
@@ -46,16 +42,7 @@ class MainActivity : AppCompatActivity() {
                     is SplashFragment -> {
                         navView.visibility = View.GONE
                     }
-                    is MainOnBoardingFragment -> {
-                        navView.visibility = View.GONE
-                    }
-                    is OnBoardingFragment1 -> {
-                        navView.visibility = View.GONE
-                    }
-                    is OnBoardingFragment2 -> {
-                        navView.visibility = View.GONE
-                    }
-                    is OnBoardingFragment3 -> {
+                    is BaseFragment -> {
                         navView.visibility = View.GONE
                     }
                     else -> {

@@ -3,47 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/splash_fragment">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.kinopoiskunofficial.bottom_navigation.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/home_fragment"
+        android:name="com.example.kinopoiskunofficial.presentation.bottom_navigation.home.HomeFragment"
+        android:label="home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.kinopoiskunofficial.bottom_navigation.search.SearchFragment"
-        android:label="@string/title_dashboard"
+        android:id="@+id/search_fragment"
+        android:name="com.example.kinopoiskunofficial.presentation.bottom_navigation.search.SearchFragment"
+        android:label="search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.kinopoiskunofficial.bottom_navigation.profile.ProfileFragment"
-        android:label="@string/title_notifications"
+        android:id="@+id/profile_fragment"
+        android:name="com.example.kinopoiskunofficial.presentation.bottom_navigation.profile.ProfileFragment"
+        android:label="profile"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.kinopoiskunofficial.splash.SplashFragment"
-        android:label="SplashFragment" >
+        android:id="@+id/splash_fragment"
+        android:name="com.example.kinopoiskunofficial.presentation.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_louder">
+
         <action
-            android:id="@+id/action_splashFragment_to_mainOnBoardingFragment"
-            app:destination="@id/mainOnBoardingFragment"
-            app:popUpTo="@id/splashFragment" />
+            android:id="@+id/action_splash_fragment_to_home_fragment"
+            app:destination="@id/home_fragment"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashFragment_to_navigation_home"
-            app:destination="@id/navigation_home"
-            app:popUpTo="@id/splashFragment"
+            android:id="@+id/action_splash_fragment_to_main_onboarding_fragment"
+            app:destination="@id/main_onboarding_fragment"
+            app:popUpTo="@id/splash_fragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/mainOnBoardingFragment"
-        android:name="com.example.kinopoiskunofficial.onboarding.MainOnBoardingFragment"
-        android:label="MainOnBoardingFragment" >
+        android:id="@+id/main_onboarding_fragment"
+        android:name="com.example.kinopoiskunofficial.presentation.onboarding.MainOnBoardingFragment"
+        android:label="MainOnBoardingFragment"
+        tools:layout="@layout/fragment_onboarding_main">
         <action
-            android:id="@+id/action_mainOnBoardingFragment_to_navigation_home"
-            app:destination="@id/navigation_home"
-            app:popUpTo="@id/mainOnBoardingFragment"
+            android:id="@+id/action_main_onboarding_fragment_to_home_fragment"
+            app:destination="@id/home_fragment"
+            app:popUpTo="@id/main_onboarding_fragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>
