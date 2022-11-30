@@ -14,7 +14,9 @@ import com.example.kinopoiskunofficial.databinding.ActivityMainBinding
 import com.example.kinopoiskunofficial.presentation.BaseFragment
 import com.example.kinopoiskunofficial.presentation.splash.SplashFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

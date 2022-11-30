@@ -8,18 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.kinopoiskunofficial.R
-import com.example.kinopoiskunofficial.databinding.FragmentLouderBinding
+import com.example.kinopoiskunofficial.databinding.FragmentSplashBinding
 import com.example.kinopoiskunofficial.presentation.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashFragment : BaseFragment() {
-
-    private lateinit var binding: FragmentLouderBinding
+    private lateinit var binding: FragmentSplashBinding
 
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         Handler().postDelayed({
             if (onBoardingFinished()) {
@@ -27,10 +26,9 @@ class SplashFragment : BaseFragment() {
             } else {
                 findNavController().navigate(R.id.action_splash_fragment_to_main_onboarding_fragment)
             }
-        }, 1000)
+        }, 500)
 
-        binding = FragmentLouderBinding.inflate(layoutInflater, container, false)
-
+        binding = FragmentSplashBinding.inflate(layoutInflater, container, false)
         return binding.root
 
     }

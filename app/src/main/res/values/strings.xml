@@ -13,6 +13,43 @@
     <string name="bottom_menu_home">Home</string>
     <string name="bottom_menu_search">Search</string>
     <string name="bottom_menu_profile">Profile</string>
+    <string name="refresh_btn">refresh</string>
+
+    <!-- Series seasons/episodes fragment -->
+    <string name="season_episode_name">%d серия. %s</string>
+    <string name="season_chip_name">%d</string>
+
+    <!-- Gallery full fragment -->
+    <string name="title_gallery">Галерея</string>
+    <string name="chip_name">%s %d</string>
+    <string name="label_series_seasons">Сезоны и серии</string>
+
+    <!-- Film detail fragment -->
+    <string name="label_film_actors">В фильме снимались</string>
+    <string name="label_film_makers">Над фильмом работали</string>
+    <string name="label_film_gallery">Галерея</string>
+    <string name="label_film_similar">Похожие фильмы</string>
+    <string name="seasons_episodes_count">%s, %s</string>
+    <string name="placeholder_series_start_year">_</string>
+    <string name="placeholder_series_end_year">н.в.</string>
+    <string name="show_all">Показать все</string>
+    <string name="category">Категория</string>
+    <string name="text_all">Все</string>
+    <string name="title">Заголовок</string>
+    <string name="name_film">Название фильма</string>
+    <string name="_10_0">10.0</string>
+    <string name="year_genre">год, жанр</string>
+    <string name="country_length_age">Страна,Длительность , Возраст</string>
+    <string name="default_description_short">Чукотский парень влюбляется в американскую вебкам-модель. Приз Венеции, Кристина Асмус в роли девушки мечты</string>
+    <string name="default_description_full">Все меняется в жизни юного чукотского охотника Лёшки с появлением в поселке интернета. Он влюбляется — впервые и сильно — в молчаливую девушку…</string>
+    <string name="_0">0</string>
+    <string name="name_staff">Имя Фамилия</string>
+    <string name="role">Роль</string>
+    <string name="filmography">Фильмография</string>
+    <string name="count_film">Количество фильмов</string>
+    <string name="name">Название</string>
+    <string name="name_actor">Имя Фамилия</string>
+    <string name="to_the_list">К списку</string>
 
 
 </resources>

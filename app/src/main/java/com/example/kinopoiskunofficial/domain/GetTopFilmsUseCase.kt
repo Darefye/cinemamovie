@@ -2,11 +2,10 @@ package com.example.kinopoiskunofficial.domain
 
 import com.example.kinopoiskunofficial.data.CinemaRepository
 import com.example.kinopoiskunofficial.entity.HomeItem
+import javax.inject.Inject
 
-
-class GetTopFilmsUseCase(private val cinemaRepository: CinemaRepository) {
-
+class GetTopFilmsUseCase @Inject constructor(private val repository: CinemaRepository) {
     suspend fun executeTopFilms(topType: String, page: Int): List<HomeItem> {
-        return cinemaRepository.getFilmsTop(topType, page)
+        return repository.getFilmsTop(topType, page)
     }
 }

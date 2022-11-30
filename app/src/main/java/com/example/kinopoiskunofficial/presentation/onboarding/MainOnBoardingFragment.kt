@@ -43,7 +43,7 @@ class MainOnBoardingFragment : BaseFragment() {
     }
 
     private fun initViews(view: View) {
-        viewPager = view.findViewById(R.id.viewPager)
+        viewPager = view.findViewById(R.id.view_pager)
         viewPager.adapter = ViewPagerAdapter(activity as AppCompatActivity)
         viewPagerIndicator = view.findViewById(R.id.viewPagerIndicator)
         initIndicators()

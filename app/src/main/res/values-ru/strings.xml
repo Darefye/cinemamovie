@@ -1,18 +1,44 @@
 <resources>
-
     <string name="app_name">SkillCinema</string>
     <string name="todo">TODO</string>
 
-    <!--onboarding-->
-    <string name="onboarding_btn_skip">Пропустить</string>
-    <string name="onboarding_description_first">Узнавай\nо премьерах</string>
-    <string name="onboarding_description_second">Создавай\nколлекции</string>
-    <string name="onboarding_description_third">Делись\nс друзьями</string>
+    <!--onbording-->
+    <string name="onboarding_btn_skip">Skip</string>
+    <string name="onboarding_description_first">Find out about the premieres</string>
+    <string name="onboarding_description_second">Create collections</string>
+    <string name="onboarding_description_third">Share with your friends</string>
 
     <!--bottom_menu-->
-    <string name="bottom_menu_home">Главная</string>
-    <string name="bottom_menu_search">Поиск</string>
-    <string name="bottom_menu_profile">Профиль</string>
+    <string name="bottom_menu_home">Home</string>
+    <string name="bottom_menu_search">Search</string>
+    <string name="bottom_menu_profile">Profile</string>
+    <string name="refresh_btn">refresh</string>
+
+    <!-- Series seasons/episodes fragment -->
+    <string name="season_episode_name">%d серия. %s</string>
+    <string name="season_chip_name">%d</string>
+
+    <!-- Gallery full fragment -->
+    <string name="title_gallery">Галерея</string>
+    <string name="chip_name">%s %d</string>
+    <string name="label_series_seasons">Сезоны и серии</string>
+
+    <!-- Film detail fragment -->
+    <string name="label_film_actors">В фильме снимались</string>
+    <string name="label_film_makers">Над фильмом работали</string>
+    <string name="label_film_gallery">Галерея</string>
+    <string name="label_film_similar">Похожие фильмы</string>
+    <string name="seasons_episodes_count">%s, %s</string>
+    <string name="placeholder_series_start_year">_</string>
+    <string name="placeholder_series_end_year">н.в.</string>
+    <string name="show_all">Показать все</string>
+    <string name="category">Категория</string>
+    <string name="text_all">Все</string>
+    <string name="title">Заголовок</string>
+    <string name="name_film">Название фильма</string>
+    <string name="_10_0">10.0</string>
+    <string name="year_genre">год, жанр</string>
+    <string name="country_length_age">Страна,Длительность , Возраст</string>
 
 
 </resources>

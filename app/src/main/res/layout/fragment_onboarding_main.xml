@@ -6,17 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="center|start"
         android:text="@string/app_name"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnSkip"
+        android:textAppearance="@style/appLogo"
+        app:layout_constraintEnd_toStartOf="@+id/btn_skip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,20 +30,21 @@
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSkip"
-        style="@style/Widget.AppCompat.ActionButton"
+    <Button
+        style="@style/Widget.AppCompat.Light.ActionButton"
+        android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
+        android:textColor="#B5B5C9"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/onboarding_btn_skip"
-        android:textAppearance="@style/TextViewTitleSecond"
+        android:textAppearance="@style/BtmTextFromOnboarding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

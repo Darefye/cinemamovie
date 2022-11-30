@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.SkillCinema"
-    tools:context=".presentation.bottom_navigation.profile.ProfileFragment">
+    tools:context=".presentation.profile.ProfileFragment">
 
     <TextView
         android:layout_width="match_parent"

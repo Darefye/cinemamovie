@@ -1,6 +1,5 @@
-package ru.zhdanon.skillcinema.data.filmstop
+package com.example.kinopoiskunofficial.data.filmstop
 
-import com.example.kinopoiskunofficial.data.filmstop.FilmTop
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

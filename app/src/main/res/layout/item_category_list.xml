@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="8dp"
-    android:paddingBottom="24dp">
+    android:paddingBottom="8dp">
 
     <TextView
         android:id="@+id/item_category"
@@ -13,23 +13,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Популярное"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="@string/category"
+        android:textAppearance="@style/TextCategory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvbtn_all"
+        android:background="@drawable/my_ripple"
+        android:id="@+id/tv_btn_all"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        android:text="Все"
-        android:textColor="#3D3BFF"
-        android:textSize="18sp"
+        android:gravity="center"
+        android:text="@string/text_all"
+        android:textAppearance="@style/BtnCategory"
+        app:layout_constraintBottom_toBottomOf="@+id/item_category"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,9 +38,12 @@
         android:id="@+id/film_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_category"
         tools:listitem="@layout/item_film" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
