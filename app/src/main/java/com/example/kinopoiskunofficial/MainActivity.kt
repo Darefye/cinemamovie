@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kinopoiskunofficial.databinding.ActivityMainBinding
 import com.example.kinopoiskunofficial.presentation.BaseFragment
+import com.example.kinopoiskunofficial.presentation.gallery.FragmentGalleryFullscreen
 import com.example.kinopoiskunofficial.presentation.splash.SplashFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                     is SplashFragment -> {
                         navView.visibility = View.GONE
                     }
-                    is BaseFragment -> {
+                    is FragmentGalleryFullscreen -> {
                         navView.visibility = View.GONE
                     }
                     else -> {

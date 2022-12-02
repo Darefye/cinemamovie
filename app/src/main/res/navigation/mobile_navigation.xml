@@ -68,7 +68,7 @@
             app:destination="@id/fragmentStaffDetail" />
         <action
             android:id="@+id/action_fragmentFilmDetail_to_fragmentGalleryFull"
-            app:destination="@id/fragmentGalleryFull" />
+            app:destination="@id/fragmentGallery" />
         <action
             android:id="@+id/action_fragmentFilmDetail_to_fragmentSeasons"
             app:destination="@id/fragmentSeasons" />
@@ -105,14 +105,17 @@
         <action
             android:id="@+id/action_fragmentStaffDetail_to_fragmentFilmography"
             app:destination="@id/fragmentFilmography" />
+        <action
+            android:id="@+id/action_fragmentStaffDetail_to_fragmentGalleryFullscreen"
+            app:destination="@id/fragmentGalleryFullscreen" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_film_gallery"
-        android:id="@+id/fragmentGalleryFull"
-        android:name="com.example.kinopoiskunofficial.presentation.gallery.FragmentGalleryFull"
-        android:label="FragmentGalleryFull">
-        <action
-            android:id="@+id/action_fragmentGalleryFull_to_fragmentGalleryFullscreen"
+        android:id="@+id/fragmentGallery"
+        android:name="com.example.kinopoiskunofficial.presentation.gallery.FragmentGallery"
+        android:label="FragmentGallery"
+        tools:layout="@layout/fragment_film_gallery">
+         <action
+            android:id="@+id/action_fragmentGallery_to_fragmentGalleryFullscreen"
             app:destination="@id/fragmentGalleryFullscreen" />
     </fragment>
     <fragment
@@ -122,7 +125,6 @@
         android:label="FragmentGalleryFullscreen">
         <argument
             android:name="position"
-            android:defaultValue="0"
             app:argType="integer" />
     </fragment>
     <fragment

@@ -293,7 +293,6 @@ class CinemaViewModel @Inject constructor(
         }
     }
 
-
     companion object {
 
         private val calendar = Calendar.getInstance()

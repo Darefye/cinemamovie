@@ -7,7 +7,7 @@
 
     <!-- Filmography-label, and back-button -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbar_staff_filmography"
+        android:id="@+id/gallery_fullscreen"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white"
@@ -51,7 +51,7 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_staff_filmography"
+        app:layout_constraintTop_toBottomOf="@+id/gallery_fullscreen"
         tools:text="@string/name_staff" />
 
     <!-- Profession -->

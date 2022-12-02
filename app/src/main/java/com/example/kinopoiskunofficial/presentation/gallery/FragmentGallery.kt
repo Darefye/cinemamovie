@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,7 +22,7 @@ import com.example.kinopoiskunofficial.presentation.gallery.recycleradapter.Gall
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
-class FragmentGalleryFull : Fragment() {
+class FragmentGallery : Fragment() {
     private var _binding: FragmentFilmGalleryBinding? = null
     private val binding get() = _binding!!
 
@@ -40,7 +41,7 @@ class FragmentGalleryFull : Fragment() {
 
         setChipButton()
 
-        binding.galleryBackBtn.setOnClickListener { requireActivity().onBackPressed() }
+        binding.galleryBack.setOnClickListener { requireActivity().onBackPressed() }
     }
 
     private fun setChipButton() {
@@ -106,8 +107,8 @@ class FragmentGalleryFull : Fragment() {
     }
 
     private fun onClick(position: Int) {
-        val action = FragmentGalleryFullDirections
-            .actionFragmentGalleryFullToFragmentGalleryFullscreen(position)
+        val action = FragmentGalleryDirections
+            .actionFragmentGalleryToFragmentGalleryFullscreen(position)
         findNavController().navigate(action)
     }
 
