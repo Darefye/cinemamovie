@@ -4,20 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.search.SearchFragment">
+    android:paddingHorizontal="26dp"
+    android:paddingTop="16dp">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <!-- Search group -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_group"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/bottom_menu_search"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:background="@drawable/search_input_field"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_my_field"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_input_field"
+            android:drawableStart="@drawable/ic_search_gray_24dp"
+            android:drawableEnd="@drawable/ic_vertical_line"
+            android:drawablePadding="8dp"
+            android:ellipsize="end"
+            android:hint="@string/hint_textfield_search"
+            android:maxLines="1"
+            android:paddingHorizontal="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/search_filter_btn"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem/random" />
+
+        <ImageButton
+            android:id="@+id/search_filter_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/search_input_field"
+            android:foreground="@drawable/my_ripple"
+            android:src="@drawable/ic_search_filters"
+            app:layout_constraintBottom_toBottomOf="@id/search_my_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/search_my_field" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- FilmList -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_film_list"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/search_group"
+        tools:listitem="@layout/item_filmography_film"
+        tools:visibility="invisible" />
+
+    <!-- Progress group -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_progress_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_group"
+        tools:layout_editor_absoluteX="26dp">
+
+        <TextView
+            android:id="@+id/search_progress_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="4"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/search_progress_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_watch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

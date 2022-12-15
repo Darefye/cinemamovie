@@ -323,6 +323,7 @@
                         android:id="@+id/rv_film_actors_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/film_actors_label"
                         tools:listitem="@layout/item_actor_film_detail" />

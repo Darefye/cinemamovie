@@ -20,9 +20,16 @@
 
     <fragment
         android:id="@+id/search_fragment"
-        android:name="com.example.kinopoiskunofficial.presentation.search.SearchFragment"
-        android:label="search"
-        tools:layout="@layout/fragment_search" />
+        android:name="com.example.kinopoiskunofficial.presentation.search.FragmentSearch"
+        android:label="FragmentSearch"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_fragment_to_fragmentSearchSettings"
+            app:destination="@id/fragmentSearchSettings" />
+        <action
+            android:id="@+id/action_search_fragment_to_fragmentFilmDetail"
+            app:destination="@id/fragmentFilmDetail" />
+    </fragment>
 
     <fragment
         android:id="@+id/profile_fragment"
@@ -61,7 +68,7 @@
     <fragment
         android:id="@+id/fragmentFilmDetail"
         tools:layout="@layout/fragment_detail_film"
-        android:name="com.example.kinopoiskunofficial.presentation.filmdetail.FragmentFilmDetail"
+        android:name="com.example.kinopoiskunofficial.presentation.home.filmdetail.FragmentFilmDetail"
         android:label="FragmentFilmDetail">
         <action
             android:id="@+id/action_fragmentFilmDetail_to_fragmentStaffDetail"
@@ -84,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentAllFilms"
-        android:name="com.example.kinopoiskunofficial.presentation.allfilmsbycategory.FragmentAllFilms"
+        android:name="com.example.kinopoiskunofficial.presentation.home.allfilmsbycategory.FragmentAllFilms"
         android:label="FragmentAllFilms"
         tools:layout="@layout/fragment_all_films">
         <action
@@ -94,7 +101,7 @@
     <fragment
         tools:layout="@layout/fragment_staff_detail"
         android:id="@+id/fragmentStaffDetail"
-        android:name="com.example.kinopoiskunofficial.presentation.staffdetail.FragmentStaffDetail"
+        android:name="com.example.kinopoiskunofficial.presentation.home.staffdetail.FragmentStaffDetail"
         android:label="FragmentStaffDetail">
         <argument
             android:name="staffId"
@@ -111,7 +118,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentGallery"
-        android:name="com.example.kinopoiskunofficial.presentation.gallery.FragmentGallery"
+        android:name="com.example.kinopoiskunofficial.presentation.home.gallery.FragmentGallery"
         android:label="FragmentGallery"
         tools:layout="@layout/fragment_film_gallery">
          <action
@@ -121,7 +128,7 @@
     <fragment
         tools:layout="@layout/fragment_gallery_fullscreen"
         android:id="@+id/fragmentGalleryFullscreen"
-        android:name="com.example.kinopoiskunofficial.presentation.gallery.FragmentGalleryFullscreen"
+        android:name="com.example.kinopoiskunofficial.presentation.home.gallery.FragmentGalleryFullscreen"
         android:label="FragmentGalleryFullscreen">
         <argument
             android:name="position"
@@ -130,7 +137,7 @@
     <fragment
         tools:layout="@layout/fragment_seasons"
         android:id="@+id/fragmentSeasons"
-        android:name="com.example.kinopoiskunofficial.presentation.series.FragmentSeasons"
+        android:name="com.example.kinopoiskunofficial.presentation.home.series.FragmentSeasons"
         android:label="FragmentSeasons">
         <argument
             android:name="seriesName"
@@ -139,7 +146,7 @@
 
     <fragment
         android:id="@+id/fragmentSimilarFilms"
-        android:name="com.example.kinopoiskunofficial.presentation.filmdetail.FragmentSimilarFilms"
+        android:name="com.example.kinopoiskunofficial.presentation.home.filmdetail.FragmentSimilarFilms"
         android:label="FragmentSimilarFilms">
         <action
             android:id="@+id/action_fragmentSimilarFilms_to_fragmentFilmDetail"
@@ -148,7 +155,7 @@
     <fragment
         tools:layout="@layout/item_filmography_film"
         android:id="@+id/fragmentFilmography"
-        android:name="com.example.kinopoiskunofficial.presentation.staffdetail.FragmentFilmography"
+        android:name="com.example.kinopoiskunofficial.presentation.home.staffdetail.FragmentFilmography"
         android:label="FragmentFilmography" >
         <action
             android:id="@+id/action_fragmentFilmography_to_fragmentFilmDetail"
@@ -157,7 +164,7 @@
     <fragment
         android:id="@+id/fragmentAllStaffsByFilm"
         tools:layout="@layout/fragment_staff_all_by_film"
-        android:name="com.example.kinopoiskunofficial.presentation.allstaffbyfilm.FragmentAllStaffsByFilm"
+        android:name="com.example.kinopoiskunofficial.presentation.home.allstaffbyfilm.FragmentAllStaffsByFilm"
         android:label="FragmentAllStaffsByFilm" >
         <action
             android:id="@+id/action_fragmentAllStaffsByFilm_to_fragmentStaffDetail"
@@ -165,5 +172,23 @@
         <argument
             android:name="professionKey"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSearchFilters"
+        android:name="com.example.kinopoiskunofficial.presentation.search.FragmentSearchFilters"
+        android:label="FragmentSearchFilters">
+        <argument
+            android:name="filterType"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSearchSettings"
+        android:name="com.example.kinopoiskunofficial.presentation.search.FragmentSearchSettings"
+        android:label="FragmentSearchSettings" >
+        <action
+            android:id="@+id/action_fragmentSearchSettings_to_fragmentSearchFilters"
+            app:destination="@id/fragmentSearchFilters" />
     </fragment>
 </navigation>

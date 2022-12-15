@@ -1,6 +1,8 @@
 package com.example.kinopoiskunofficial.data
 
 import com.example.kinopoiskunofficial.data.filmbyfilter.FilmByFilter
+import com.example.kinopoiskunofficial.data.filmbyfilter.ResponseByFilter
+import com.example.kinopoiskunofficial.data.filmbyfilter.ResponseGenresCountries
 import com.example.kinopoiskunofficial.data.filmspremier.FilmPremier
 import com.example.kinopoiskunofficial.entity.HomeItem
 import retrofit2.Retrofit
@@ -25,10 +27,19 @@ class CinemaRepository @Inject constructor() {
 
     suspend fun getStaffById(staffId: Int) = retrofit.getStaff(staffId)
 
-    suspend fun getFilmsByFilter(filters: FilmFilterParams, page: Int): List<FilmByFilter> {
+    suspend fun getFilmsTop(topType: String, page: Int): List<HomeItem> {
+        return retrofit.getFilmsTop(type = topType, page = page).films
+    }
+
+    suspend fun getFilmsPremier(year: Int, month: String): List<FilmPremier> {
+        return retrofit.getPremier(year, month).items
+    }
+
+    // FragmentSearch
+    suspend fun getFilmsByFilter(filters: ParamsFilterFilm, page: Int): ResponseByFilter {
         return retrofit.getFilmsByFilter(
-            countries = "",
-            genres = "",
+            countries = if (filters.countries.isNotEmpty()) filters.countries.keys.first().toString() else "",
+            genres = if (filters.genres.isNotEmpty()) filters.genres.keys.first().toString() else "",
             order = filters.order,
             type = filters.type,
             ratingFrom = filters.ratingFrom,
@@ -38,15 +49,11 @@ class CinemaRepository @Inject constructor() {
             imdbId = filters.imdbId,
             keyword = filters.keyword,
             page = page
-        ).items
+        )
     }
 
-    suspend fun getFilmsTop(topType: String, page: Int): List<HomeItem> {
-        return retrofit.getFilmsTop(type = topType, page = page).films
-    }
-
-    suspend fun getFilmsPremier(year: Int, month: String): List<FilmPremier> {
-        return retrofit.getPremier(year, month).items
+    suspend fun getGenresCountries(): ResponseGenresCountries {
+        return retrofit.getGenresCountries()
     }
 
     companion object {

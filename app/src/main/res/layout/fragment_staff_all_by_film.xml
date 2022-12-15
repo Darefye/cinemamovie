@@ -10,7 +10,11 @@
         android:id="@+id/all_staffs_actionbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="25dp"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,8 +51,12 @@
         android:id="@+id/all_staffs_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/all_staffs_actionbar"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/item_staff_detail_film"

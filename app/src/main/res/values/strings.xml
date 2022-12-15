@@ -51,5 +51,35 @@
     <string name="name_actor">Имя Фамилия</string>
     <string name="to_the_list">К списку</string>
 
+    <!-- Search setting fragment -->
+    <string name="search_settings_title">Настройки поиска</string>
+    <string name="search_settings_label_show">Показывать</string>
+    <string name="search_settings_radio_all">Все</string>
+    <string name="search_settings_radio_films">Фильмы</string>
+    <string name="search_settings_radio_series">Сериалы</string>
+    <string name="search_settings_rating_text">от %d до %d</string>
+    <string name="search_settings_country_label">Страна</string>
+    <string name="search_settings_genre_label">Жанр</string>
+    <string name="search_settings_rating_label">Рейтинг</string>
+    <string name="search_settings_year_label">Год</string>
+    <string name="search_settings_radio_popular">Популярность</string>
+    <string name="search_settings_radio_rating">Рейтинг</string>
+    <string name="search_settings_radio_date">Дата</string>
+    <string name="search_settings_sorting_label">Сортировать</string>
+    <string name="search_filters_country_choose">Выберете страну</string>
+    <string name="search_filters_countries_default">Все страны</string>
+    <string name="search_filters_genres_default">Все жанры</string>
+    <string name="hint_textfield_search">Фильмы, актёры, режиссёры</string>
+    <string name="text_films">Фильмы</string>
+    <string name="serials">Сериалы</string>
+    <string name="setting_search">Настройки поиска</string>
+    <string name="Country">Страна</string>
+    <string name="genre">Жанр</string>
+    <string name="Year">Год</string>
+    <string name="rating">Рейтинг</string>
+    <string name="sort">Сортировать</string>
+    <string name="date">Дата</string>
+    <string name="popularity">Популярность</string>
+
 
 </resources>

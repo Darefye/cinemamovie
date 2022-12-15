@@ -68,6 +68,13 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="textWhite">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
 
 
 

@@ -1,6 +1,7 @@
 package com.example.kinopoiskunofficial.data
 
 import com.example.kinopoiskunofficial.data.filmbyfilter.ResponseByFilter
+import com.example.kinopoiskunofficial.data.filmbyfilter.ResponseGenresCountries
 import com.example.kinopoiskunofficial.data.filmbyid.ResponseCurrentFilm
 import com.example.kinopoiskunofficial.data.filmgallery.ResponseFilmGallery
 import com.example.kinopoiskunofficial.data.filmspremier.ResponsePremier
@@ -83,6 +84,10 @@ interface KinopoiskApi {
         @Query("keyword") keyword: String,
         @Query("page") page: Int
     ): ResponseByFilter
+
+    @Headers("X-API-KEY: $API_KEY")
+    @GET("v2.2/films/filters")
+    suspend fun getGenresCountries(): ResponseGenresCountries
 
     companion object {
         private const val API_KEY = "310f1d28-9363-42cf-be67-94a3ea2424ca"

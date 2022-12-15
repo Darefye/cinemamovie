@@ -16,10 +16,10 @@ import com.example.kinopoiskunofficial.data.staffbyid.ResponseStaffById
 import com.example.kinopoiskunofficial.domain.*
 import com.example.kinopoiskunofficial.entity.HomeItem
 import com.example.kinopoiskunofficial.presentation.StateLoading
-import com.example.kinopoiskunofficial.presentation.allfilmsbycategory.allfilmadapter.AllFilmAdapter
-import com.example.kinopoiskunofficial.presentation.allfilmsbycategory.allfilmadapter.AllFilmPagingSource
-import com.example.kinopoiskunofficial.presentation.filmdetail.filmsbyfilter.FilmsByFilterPagingSource
-import com.example.kinopoiskunofficial.presentation.gallery.recycleradapter.GalleryFullPagingSource
+import com.example.kinopoiskunofficial.presentation.home.allfilmsbycategory.allfilmadapter.AllFilmAdapter
+import com.example.kinopoiskunofficial.presentation.home.allfilmsbycategory.allfilmadapter.AllFilmPagingSource
+import com.example.kinopoiskunofficial.presentation.home.filmdetail.filmsbyfilter.FilmsByFilterPagingSource
+import com.example.kinopoiskunofficial.presentation.home.gallery.recycleradapter.GalleryFullPagingSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -74,7 +74,7 @@ class CinemaViewModel @Inject constructor(
         config = PagingConfig(pageSize = 20),
         pagingSourceFactory = {
             AllFilmPagingSource(
-                filterParams = currentFilterParams,
+                filterParams = currentParamsFilterFilm,
                 categoriesFilms = currentCategory,
                 year = calendar.get(Calendar.YEAR),
                 month = (calendar.get(Calendar.MONTH) + 1).converterInMonth(),
@@ -148,11 +148,10 @@ class CinemaViewModel @Inject constructor(
                         )
                     ),
 
-
                     HomeList(
                         category = CategoriesFilms.TV_SERIES,
                         filmList = getFilmListUseCase.executeFilmsByFilter(
-                            filters = FilmFilterParams(
+                            filters = ParamsFilterFilm(
                                 type = TOP_TYPES.getValue(CategoriesFilms.TV_SERIES),
                                 ratingFrom = 6
                             ),
@@ -185,7 +184,7 @@ class CinemaViewModel @Inject constructor(
         config = PagingConfig(pageSize = 20),
         pagingSourceFactory = {
             FilmsByFilterPagingSource(
-                filters = FilmFilterParams(type = TOP_TYPES.getValue(CategoriesFilms.TV_SERIES)),
+                filters = ParamsFilterFilm(type = TOP_TYPES.getValue(CategoriesFilms.TV_SERIES)),
                 getFilmListUseCase = getFilmListUseCase
             )
         }
