@@ -17,6 +17,7 @@ import com.example.kinopoiskunofficial.databinding.FragmentStaffDetailBinding
 import com.example.kinopoiskunofficial.entity.HomeItem
 import com.example.kinopoiskunofficial.loadImage
 import com.example.kinopoiskunofficial.presentation.StateLoading
+import com.example.kinopoiskunofficial.presentation.home.allfilmsbycategory.FragmentAllFilmsDirections
 import com.example.kinopoiskunofficial.presentation.home.filmrecycler.FilmAdapter
 
 class FragmentStaffDetail : Fragment() {
@@ -125,8 +126,8 @@ class FragmentStaffDetail : Fragment() {
     }
 
     private fun onClickFilm(filmId: Int) {
-        viewModel.getFilmById(filmId)
-        findNavController().navigate(R.id.action_fragmentStaffDetail_to_fragmentFilmDetail)
+        val action = FragmentStaffDetailDirections.actionFragmentStaffDetailToFragmentFilmDetail(filmId)
+        findNavController().navigate(action)
     }
 
     private fun getAllFilmsByStaff() {

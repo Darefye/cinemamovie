@@ -56,7 +56,7 @@
         android:background="@drawable/search_input_field"
         android:drawableStart="@drawable/ic_search_black_24dp"
         android:drawablePadding="8dp"
-        android:hint="qwer"
+        android:hint="@string/Country"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,12 +67,11 @@
         android:id="@+id/search_filters_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:scrollIndicators="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_filters_sv"
+        app:layout_constraintTop_toBottomOf="@+id/search_filters_sv"
         tools:listitem="@layout/item_search_filters" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

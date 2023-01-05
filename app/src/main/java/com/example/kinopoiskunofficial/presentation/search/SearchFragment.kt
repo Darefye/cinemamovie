@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kinopoiskunofficial.R
 import com.example.kinopoiskunofficial.SearchViewModel
@@ -73,15 +75,45 @@ class FragmentSearch : Fragment() {
 
     private fun setAdapter() {
 
+        adapter.addLoadStateListener { state ->
+            val currentState = state.refresh
+            binding.searchFilmList.isVisible = currentState != LoadState.Loading
+            binding.loadingProgress.isVisible = currentState == LoadState.Loading
+            binding.searchProgressText.isVisible = currentState != LoadState.Loading
+            binding.searchProgressImage.isVisible = currentState == LoadState.Loading
+            when (currentState) {
+                is LoadState.Loading -> {
+                    binding.searchFilmList.isVisible = false
+                    binding.searchProgressGroup.isVisible = true
+                    binding.searchProgressText.isVisible = false
+                    binding.searchProgressImage.isVisible = true
+                }
+                is LoadState.NotLoading -> {
+                    binding.searchFilmList.isVisible = true
+                    binding.loadingProgress.isVisible = false
+                    binding.searchProgressText.isVisible = false
+                    binding.searchProgressImage.isVisible = false
+
+                }
+                else -> {
+                    binding.searchFilmList.isVisible = false
+                    binding.loadingProgress.isVisible = false
+                    binding.searchProgressText.isVisible = true
+                    binding.searchProgressImage.isVisible = true
+                }
+            }
+        }
+
+
         binding.searchFilmList.layoutManager =
             GridLayoutManager(requireContext(), 1, GridLayoutManager.VERTICAL, false)
         binding.searchFilmList.adapter = adapter
     }
 
     private fun setSearchString() {
-
         binding.searchMyField.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int){}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 viewLifecycleOwner.lifecycleScope.launchWhenStarted {

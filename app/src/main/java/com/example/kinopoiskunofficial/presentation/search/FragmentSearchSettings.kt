@@ -51,7 +51,7 @@ class FragmentSearchSettings : Fragment() {
                 else getString(R.string.search_filters_genres_default)
         }
 
-        binding.searchSettingsCountryTv.setOnClickListener {
+        binding.llSearchCountry.setOnClickListener {
             filterTypeChooseClick(FragmentSearchFilters.KEY_COUNTRY)
         }
         binding.searchSettingsGenreTv.setOnClickListener {

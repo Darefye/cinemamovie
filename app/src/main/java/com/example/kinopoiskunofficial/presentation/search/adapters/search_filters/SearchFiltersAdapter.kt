@@ -25,7 +25,7 @@ class SearchFiltersAdapter(
                     onItemClick(item)
                     isSelected = !isSelected
                     if (isSelected) {
-                        searchFilterName.setBackgroundColor(Color.DKGRAY)
+                        searchFilterName.setBackgroundColor(Color.rgb(225,225,233))
                     } else {
                         searchFilterName.setBackgroundColor(Color.WHITE)
                     }

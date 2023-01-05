@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kinopoiskunofficial.CinemaViewModel
 import com.example.kinopoiskunofficial.R
 import com.example.kinopoiskunofficial.databinding.FragmentAllFilmsBinding
+import com.example.kinopoiskunofficial.presentation.home.HomeFragmentDirections
 import com.example.kinopoiskunofficial.presentation.home.filmrecycler.FilmAdapter
 
 class FragmentSimilarFilms : Fragment() {
@@ -54,8 +55,8 @@ class FragmentSimilarFilms : Fragment() {
     }
 
     private fun onClickFilm(filmId: Int) {
-        viewModel.getFilmById(filmId)
-        findNavController().navigate(R.id.action_fragmentSimilarFilms_to_fragmentFilmDetail)
+        val action = HomeFragmentDirections.actionHomeFragmentToFragmentFilmDetail(filmId)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

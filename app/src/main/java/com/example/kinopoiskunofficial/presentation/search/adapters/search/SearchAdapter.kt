@@ -24,7 +24,7 @@ class SearchAdapter(
                     itemFilmographyName.text = item.nameRu ?: "No name"
                     itemFilmographyGenre.text = item.genres.firstOrNull()?.genre ?: ""
                     itemFilmographyRating.text = item.rating
-                    itemFilmographyImage.setOnClickListener {
+                    itemDe.setOnClickListener {
                         onClick(item.filmId)
                     }
                 }

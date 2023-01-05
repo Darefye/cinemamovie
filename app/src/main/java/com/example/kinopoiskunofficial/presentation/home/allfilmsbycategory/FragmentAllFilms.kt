@@ -15,6 +15,7 @@ import com.example.kinopoiskunofficial.CinemaViewModel
 import com.example.kinopoiskunofficial.R
 import com.example.kinopoiskunofficial.data.CategoriesFilms
 import com.example.kinopoiskunofficial.databinding.FragmentAllFilmsBinding
+import com.example.kinopoiskunofficial.presentation.home.HomeFragmentDirections
 import com.example.kinopoiskunofficial.presentation.home.allfilmsbycategory.allfilmadapter.AllFilmAdapter
 
 class FragmentAllFilms : Fragment() {
@@ -92,8 +93,8 @@ class FragmentAllFilms : Fragment() {
     }
 
     private fun onClickFilm(filmId: Int) {
-        viewModel.getFilmById(filmId)
-        findNavController().navigate(R.id.action_fragmentAllFilms_to_fragmentFilmDetail)
+        val action = FragmentAllFilmsDirections.actionFragmentAllFilmsToFragmentFilmDetail(filmId)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

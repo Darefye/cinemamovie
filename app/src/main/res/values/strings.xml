@@ -80,6 +80,8 @@
     <string name="sort">Сортировать</string>
     <string name="date">Дата</string>
     <string name="popularity">Популярность</string>
+    <string name="search_not_found">К сожалению, по Вашему\nничего не найдено</string>
+
 
 
 </resources>

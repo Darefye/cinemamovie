@@ -55,8 +55,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun onClickFilm(filmId: Int) {
-        viewModel.getFilmById(filmId)
-        findNavController().navigate(R.id.action_home_fragment_to_fragmentFilmDetail)
+        val action = HomeFragmentDirections.actionHomeFragmentToFragmentFilmDetail(filmId)
+        findNavController().navigate(action)
     }
 
     private fun onClickAllButton(category: CategoriesFilms) {

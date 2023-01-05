@@ -12,7 +12,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kinopoiskunofficial.databinding.ActivityMainBinding
 import com.example.kinopoiskunofficial.presentation.BaseFragment
+import com.example.kinopoiskunofficial.presentation.home.HomeFragment
 import com.example.kinopoiskunofficial.presentation.home.gallery.FragmentGalleryFullscreen
+import com.example.kinopoiskunofficial.presentation.onboarding.MainOnBoardingFragment
+import com.example.kinopoiskunofficial.presentation.onboarding.OnBoardingFragment1
+import com.example.kinopoiskunofficial.presentation.onboarding.OnBoardingFragment2
+import com.example.kinopoiskunofficial.presentation.onboarding.OnBoardingFragment3
 import com.example.kinopoiskunofficial.presentation.splash.SplashFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,6 +53,19 @@ class MainActivity : AppCompatActivity() {
                     is FragmentGalleryFullscreen -> {
                         navView.visibility = View.GONE
                     }
+                    is MainOnBoardingFragment ->{
+                        navView.visibility = View.GONE
+                    }
+                    is OnBoardingFragment1->{
+                        navView.visibility = View.GONE
+                    }
+                    is OnBoardingFragment2 ->{
+                        navView.visibility = View.GONE
+                    }
+                    is OnBoardingFragment3 ->{
+                        navView.visibility = View.GONE
+                    }
+
                     else -> {
                         navView.visibility = View.VISIBLE
                     }

@@ -268,7 +268,8 @@ class CinemaViewModel @Inject constructor(
 
     // FragmentFilmDetail
     fun getFilmById(filmId: Int) {
-        this.currentFilmId = filmId
+        currentFilmId = filmId
+        updateParamsFilterGallery()
         viewModelScope.launch {
             try {
                 _loadCurrentFilmState.value = StateLoading.Loading
@@ -281,7 +282,11 @@ class CinemaViewModel @Inject constructor(
                 // gallery
                 setGalleryCount(filmId)
                 _currentFilmGallery.value =
-                    getGalleryByIdUseCase.executeGalleryByFilmId(filmId, "STILL", 1).items
+                    getGalleryByIdUseCase.executeGalleryByFilmId(
+                        currentParamsFilterGallery.filmId,
+                        currentParamsFilterGallery.galleryType,
+                        1
+                    ).items
                 // similar
                 val responseSimilar = getSimilarFilmsUseCase.executeSimilarFilms(filmId)
                 if (responseSimilar.total != 0) _currentFilmSimilar.value = responseSimilar.items!!
